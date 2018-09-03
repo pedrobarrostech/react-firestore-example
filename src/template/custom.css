@@ -1,0 +1,396 @@
+body {
+  font-family: 'Roboto', serif;
+  background: #262626;
+  color: #919191;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
+  font-family: 'Teko', sans-serif;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+}
+
+.bg-left {
+  width: 100%;
+  height: 700px;
+}
+
+.box {
+  width: 50%;
+  margin: 0 auto;
+}
+
+nav {
+  background-color: #202020;
+}
+
+.logo-container img {
+  margin-top: 17px;
+}
+
+.page-footer {
+  background-color: #202020;
+}
+
+.gray1 {
+  background-color: #202020;
+  height: 700px;
+}
+
+.bg-right {
+  width: 100%;
+  height: 700px;
+}
+
+.margin--bottom-3x {
+  margin-bottom: 6em;
+}
+
+.parallax-container {
+  background-image: url('./images/bg.jpg');
+  background-size: 100% auto;
+  background-color: #000;
+  height: 700px;
+}
+
+.parallax {
+  position: static;
+}
+
+.markedAsDone {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.tableActions {
+  width: 105px;
+}
+
+.messageForm {
+  padding-bottom: 60px;
+}
+
+
+/* Custom Stylesheet */
+
+
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.services {
+  padding-bottom: 60px;
+}
+
+nav ul a,
+nav .brand-logo {
+  color: #ccc;
+  padding-top: 8px;
+  cursor: pointer;
+}
+
+#logo-container>img {
+  margin-top: 17px;
+}
+
+nav ul li:hover {
+  background-color: #C62828;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 440px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255, 255, 255, .9);
+}
+
+.parallax-container .section {
+  width: 100%;
+}
+
+.main-logo {
+  width: 20em;
+  margin-top: 1em;
+}
+
+@media only screen and (max-width: 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #index-banner .section {
+    top: 0;
+  }
+
+  .main-logo {
+    width: 22em;
+  }
+
+  #app > div > div:nth-child(2) > div:nth-child(7) > div > div > div.container {
+    margin-top: -5em;
+  }
+  
+  #app > div > div:nth-child(2) > div:nth-child(5) > div > div > div > div > iframe {
+    width: 90%;
+    margin-top: -11em;
+    height: 26em;
+  }
+}
+
+.block {
+  padding: 2em;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+.logo {
+  z-index: 5;
+  position: relative;
+}
+
+nav .navNarrow {
+  position: absolute;
+  z-index: 9999;
+  width: 100%;
+  margin-top: 1px;
+}
+
+nav .navNarrow ul li {
+  width: 100%;
+  padding-left: 1.5em;
+  background: #202020;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  border: 1px solid #191919;
+}
+
+nav .navNarrow ul li:hover {
+  background-color: #C62828;
+}
+
+nav .navWide {
+  display: none;
+  margin: 0 auto;
+}
+
+nav .navWide .wideDiv {
+  text-align: center;
+}
+
+nav .navWide .wideDiv a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 2em;
+}
+
+nav .navNarrow i {
+  float: left;
+  cursor: pointer;
+  color: #FFF;
+}
+
+nav .navNarrow .narrowLinks {
+  display: none;
+}
+
+nav .navNarrow .narrowLinks a {
+  text-decoration: none;
+  display: block;
+  float: left;
+  clear: left;
+  padding: 0.5em 0;
+}
+
+iframe {
+  border: 0;
+}
+
+@media (min-width: 480px) {
+  nav .navWide {
+    display: block;
+  }
+  nav .navNarrow {
+    display: none;
+  }
+}
+
+@media (min-width: 1500px) {
+  .logo { 
+    height: 990px;
+  }
+}
+
+.slick-dots {
+  bottom: -45px;
+}
+
+nav .navWide .wideDiv a {
+  padding: 0 1.5em;
+}
+
+.page-footer {
+    font-weight: 300;
+    color: #919191;
+}
+
+.page-footer ul li a {
+  cursor: pointer;
+  color: #ddd;
+}
+
+nav ul a, nav .brand-logo {
+  color: #ddd;
+  background-color: transparent;
+}
+
+.active {
+  background-color: #C62828;
+}
+
+/* label focus color */
+input:focus + label {
+  color: #C62828 !important;
+}
+/* label underline focus color */
+.row input:focus {
+  border-bottom: 1px solid #C62828 !important;
+  box-shadow: 0 1px 0 0 #C62828 !important
+}
+
+/* label focus color */
+input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+  color: #C62828 !important;
+}
+
+/* label underline focus color */
+input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #C62828 !important;
+  box-shadow: 0 1px 0 0 #C62828 !important;
+}
+
+
+@font-face {
+  font-family: 'sailors_fat_tattoo_script_dRg';
+  src: url('sailorsfattattooscriptdemo-webfont.woff2') format('woff2'), url('sailorsfattattooscriptdemo-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'tattoo_inkregular';
+  src: url('tatti___-webfont.woff2') format('woff2'), url('tatti___-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.logo-light {
+  margin-top: -7px;
+}
+
+.logo-light  b {
+  font-family: 'tattoo_inkregular';
+  color:#fff;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #C62828, 0 0 0.5em #C62828, 0 0 0.1em #C62828, 0 10px 3px #000;
+  font-size: 40px;
+}
+.logo-light  b span {
+  animation: blink linear infinite 2s;
+}
+
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79%{
+    color: #333;
+  }
+  80% {
+    
+    text-shadow: none;
+  }
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  82% {
+    color: #333;
+    text-shadow: none;
+  }
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  92% {
+    color: #333;
+    text-shadow: none;
+  }
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}
+
+
+
+
+/* follow me @nodws */
+#btn-twtr {
+  clear:both;
+  color:#fff;
+  border:2px solid;
+  border-radius:3px;
+  text-align:center;
+  text-decoration:none;
+  display:block;
+  font-family:sans-serif;
+  font-size:14px;
+  width:13em;
+  padding:5px 10px;
+  font-weight:600;
+  position:absolute;
+  bottom:20px;
+  left:0;
+  right:0;
+  margin:0 auto;
+  background:rgba(0,0,0,0.2);
+  box-shadow:0 0 0px 3px rgba(0,0,0,0.2);
+  opacity:0.4
+}
+#btn-twtr:hover {
+  color:#fff;
+  opacity:1
+}
