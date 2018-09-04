@@ -1,35 +1,26 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import Scroll from 'react-scroll'
-import { URL_ASSETS } from '../config'
+// import { URL_ASSETS } from '../config'
+
 const Element = Scroll.Element
+class About extends Component {
 
-export default class About extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      about: {},
-      style: {}
-    }
-    this.fetchAbout = this.fetchAbout.bind(this)
+  static contextTypes = {
+    store: PropTypes.object.isRequired
   }
 
-  componentDidMount () {
-    this.fetchAbout()
+  componentWillMount() {
+    const { firestore } = this.context.store
+    firestore.get('about').then((res) => console.log(res.data()))
   }
 
-  fetchAbout () {
-    this.props.fetchAbout().payload.then((res) => {
-      const imgSrc = `${URL_ASSETS}${res.data.data.image}`
-      this.setState({ about: res.data.data })
-      this.setState({ style: { backgroundImage: `url(${imgSrc})`}})
-    })
-  }
-
-  render () {
+  render() {
     return (
       <Element name="about" className="element">
         <div className='row'>
-          <div className='col s12 m6 bg-left' style={this.state.style}></div>
+          {/* <div className='col s12 m6 bg-left' style={this.state.style}></div>
           <div className='col s12 m6 gray1 box'>
             <div className='block'>
               <h2 className='center'><span className='red-text text-darken-3'>B</span>em-vindo á <span className='red-text text-darken-3'>A</span>rtwork <span className='red-text text-darken-3'>T</span>atueria</h2>
@@ -38,9 +29,13 @@ export default class About extends Component {
               <br />
               <p className='light'>{this.state.about.description}</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </Element>
     )
   }
 }
+
+export default connect((state) => ({
+  about: state.firestore.ordered.about
+}))(About)
