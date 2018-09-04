@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import Scroll from 'react-scroll'
 
 const Element = Scroll.Element
-class About extends Component {
+export default class About extends Component {
 
   constructor (props) {
     super(props)
@@ -54,7 +53,3 @@ class About extends Component {
     )
   }
 }
-
-export default connect((state) => ({
-  about: state.firestore.ordered.about
-}))(About)
