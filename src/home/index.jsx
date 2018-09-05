@@ -22,7 +22,7 @@ export default class Home extends Component {
         <PhotoList />
         <Phrase />
         {/* <Shop />
-        <Contact /> */}
+        <Contact />  */}
         <Map />
       </div>
     )
