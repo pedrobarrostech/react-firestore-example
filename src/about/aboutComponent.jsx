@@ -25,13 +25,12 @@ export default class About extends Component {
 
   fetchAbout () {
     const { firestore } = this.context.store
-    firestore.get('about').then(snapshot => {
-      snapshot.forEach((doc) => {
-        const aboutData = doc.data()
+    firestore.collection('sections').doc('xd5CGsr4ZLHUdThWjG6Y').get()
+      .then(snapshot => {
+        const aboutData = snapshot.data()
         this.setState({ about: aboutData })
         this.setState({ style: { backgroundImage: `url(${aboutData.image})`}})
-      });
-    })
+      })
   }
 
   render () {

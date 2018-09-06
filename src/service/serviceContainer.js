@@ -1,11 +1,6 @@
 import { connect } from 'react-redux'
-import { fetchServices } from './serviceActions'
-import ServiceList from './serviceComponent'
+import Service from './serviceComponent'
 
-const mapStateToProps = (state) => {
-  return {
-    services: state.services
-  }
-}
-
-export default connect(mapStateToProps, { fetchServices })(ServiceList)
+export default connect((state) => ({
+  service: state.firestore.ordered.service
+}))(Service)

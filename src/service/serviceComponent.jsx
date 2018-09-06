@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Scroll from 'react-scroll'
 
 const Element = Scroll.Element
@@ -14,13 +15,21 @@ export default class ServiceList extends Component {
     this.renderServices = this.renderServices.bind(this)
   }
 
+  static contextTypes = {
+    store: PropTypes.object.isRequired
+  }
+
   componentDidMount() {
     this.fetchServices()
   }
 
   fetchServices() {
-    this.props.fetchServices().payload.then((res) => {
-      const services = res.data.data
+    const { firestore } = this.context.store
+    firestore.get('departments').then(snapshot => {
+      const services = []
+      snapshot.forEach((doc) => {
+        services.push(doc.data())
+      });
       this.setState({ services })
     })
   }

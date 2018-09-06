@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Scroll from 'react-scroll'
 import Slider from 'react-slick'
-import { URL_ASSETS } from '../config'
+import PropTypes from 'prop-types'
 const Element = Scroll.Element
 
 export default class Shop extends Component {
@@ -21,21 +21,27 @@ export default class Shop extends Component {
     this.renderProducts = this.renderProducts.bind(this)
   }
 
+  static contextTypes = {
+    store: PropTypes.object.isRequired
+  }
+
   componentDidMount() {
     this.fetchProducts()
   }
 
   fetchProducts() {
-    this.props.fetchProducts().then((res) => {
-      let products = res.data.data
-			const newProducts = products.map((product) => {
-        const newProduct = {}
-        newProduct.image = `${URL_ASSETS}${product.image}`
-        newProduct.link = product.link
-				return newProduct
-      })
-      this.setState({ products: newProducts})
-    })
+    const { firestore } = this.context.store
+    firestore.collection('products')
+      .where('active', '==', '1')
+      .get()
+        .then(snapshot => {
+          const products = []
+          snapshot.forEach((doc) => {
+            const data = doc.data()
+            products.push({ link: data.link, image: data.image})
+          });
+          this.setState({ products })
+        })
   }
 
   renderProducts () {

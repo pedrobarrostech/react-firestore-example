@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Scroll from 'react-scroll'
 import BackgroundSlideshow from 'react-background-slideshow'
-import { URL_ASSETS } from '../config'
+import PropTypes from 'prop-types'
 const Element = Scroll.Element
 
 export default class Gallery extends Component {
@@ -14,19 +14,28 @@ export default class Gallery extends Component {
     this.fetchBanners = this.fetchBanners.bind(this)
   }
 
+  static contextTypes = {
+    store: PropTypes.object.isRequired
+  }
+
   componentDidMount () {
     this.fetchBanners()
   }
 
   fetchBanners () {
-    this.props.fetchBanners().payload
-      .then((res) => {
-        let banners = res.data.data
-        const newBanners = banners.map((banner) => {
-          return `${URL_ASSETS}${banner.image}`
+    const { firestore } = this.context.store
+    firestore.collection('banners')
+      .where('active', '==', '1')
+      .orderBy('order') 
+      .limit(5)
+      .get()
+        .then(snapshot => {
+          const banners = []
+          snapshot.forEach((doc) => {
+            banners.push(doc.data().image)
+          });
+          this.setState({ banners })
         })
-        this.setState({ banners: newBanners })
-      })
   }
 
   render () {

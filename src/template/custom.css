@@ -276,7 +276,7 @@ nav ul a, nav .brand-logo {
   background-color: transparent;
 }
 
-.active {
+.navWide .active {
   background-color: #C62828;
 }
 

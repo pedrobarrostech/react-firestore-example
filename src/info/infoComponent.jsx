@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Scroll from 'react-scroll'
-import { URL_ASSETS } from '../config'
+import PropTypes from 'prop-types'
 const Element = Scroll.Element
 
 export default class Info extends Component {
@@ -10,19 +10,25 @@ export default class Info extends Component {
       info: {},
       style: {}
     };
-    this.fetchAbout = this.fetchAbout.bind(this)
+    this.fetchInfo = this.fetchInfo.bind(this)
+  }
+
+  static contextTypes = {
+    store: PropTypes.object.isRequired
   }
 
   componentDidMount() {
-    this.fetchAbout()
+    this.fetchInfo()
   }
 
-  fetchAbout() {
-    this.props.fetchInfo().payload.then((res) => {
-      const imgSrc = `${URL_ASSETS}${res.data.data.image}`
-      this.setState({ info: res.data.data })
-      this.setState({ style: { backgroundImage: `url(${imgSrc})`}})
-    })
+  fetchInfo() {
+    const { firestore } = this.context.store
+    firestore.collection('sections').doc('BSbTDTOyUaYbaZkEpyYu').get()
+      .then(snapshot => {
+        const infoData = snapshot.data()
+        this.setState({ info: infoData })
+        this.setState({ style: { backgroundImage: `url(${infoData.image})`}})
+      })
   }
 
   render() {

@@ -21,8 +21,10 @@ export default class Home extends Component {
         <Video />
         <PhotoList />
         <Phrase />
-        {/* <Shop />
-        <Contact />  */}
+        {/* 
+          <Shop /> 
+          <Contact />  
+        */}
         <Map />
       </div>
     )

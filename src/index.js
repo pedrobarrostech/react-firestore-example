@@ -13,12 +13,12 @@ import 'firebase/database'
 import 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyA-sZn5GZBW2SU17xB6-JpuYSgSP3IDh08',
-  authDomain: 'almanaque-62204.firebaseapp.com',
-  databaseURL: 'https://almanaque-62204.firebaseio.com',
-  projectId: 'almanaque-62204',
-  storageBucket: 'almanaque-62204.appspot.com',
-  messagingSenderId: '581326886241'
+  apiKey: 'AIzaSyCNGyDPjXrWuIQRaK-pOM7BnxFbBqTaK5Q',
+  authDomain: 'artwork-admin.firebaseapp.com',
+  databaseURL: 'https://artwork-admin.firebaseio.com',
+  projectId: 'artwork-admin',
+  storageBucket: 'artwork-admin.appspot.com',
+  messagingSenderId: '173993774803'
 }
 
 const rfConfig = {} // optional redux-firestore Config Options
